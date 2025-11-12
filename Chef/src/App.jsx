@@ -8,18 +8,19 @@ import Footer from "./components/Footer.jsx";
 export default function App() {
   return (
      <Router>
-      
+      <div className="flex flex-col min-h-screen bg-darkbg text-white">
+        
+        <main className="flex-1 p-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/generate" element={<Generator />} />
+           
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
     
-    <main className="flex-1 p-4">
-  <h1 className="text-3xl font-bold text-white">Hello from App</h1>
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/generate" element={<Generator />} />
-    {/* <Route path="/saved" element={<Saved />} /> */}
-  </Routes>
-</main>
- </Router>
   );
-  
 
 }

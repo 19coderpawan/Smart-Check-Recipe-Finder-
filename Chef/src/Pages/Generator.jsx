@@ -1,5 +1,6 @@
 import { useState } from "react";
 import RecipeCard from "../components/RecipeCard";
+import { Link } from "react-router-dom";
 
 export default function Generator() {
   const [ingredients, setIngredients] = useState("");
@@ -28,6 +29,10 @@ export default function Generator() {
 
   return (
     <div className="max-w-3xl mx-auto mt-10">
+      <Link to="/">
+      <h1 className="text-red-700">HOME</h1>
+      </Link>
+      
       <h2 className="text-3xl font-bold mb-6 text-primary">AI Recipe Generator</h2>
       <form onSubmit={handleGenerate} className="flex gap-3 mb-6">
         <input
