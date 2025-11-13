@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import chef from "../assets/chef.jpg"
 export default function Home() {
   return (
     <div className="text-center mt-20">
@@ -13,6 +13,7 @@ export default function Home() {
       >
         Start Cooking
       </Link>
+      <img src={chef} alt="your ai image" className="mx-auto mt-10 w-40 h-40 rounded-full object-cover shadow-lg border-4 border-orange-500"/>
     </div>
   );
 }
