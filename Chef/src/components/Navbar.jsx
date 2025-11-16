@@ -8,6 +8,22 @@ export default function Navbar() {
         <Link to="/" className="hover:text-primary">Home</Link>
         <Link to="/generate" className="hover:text-primary">Generate</Link>
         <Link to="/saved" className="hover:text-primary">Saved</Link>
+
+         {/* Auth Buttons */}
+          <Link
+            to="/login"
+            className="px-4 py-1.5 bg-gray-800 rounded-lg hover:bg-gray-700 transition"
+          >
+            Login
+          </Link>
+
+          <Link
+            to="/signup"
+            className="px-4 py-1.5 bg-primary text-black font-semibold rounded-lg shadow-md 
+            hover:bg-orange-400 transition"
+          >
+            Sign Up
+          </Link>
       </div>
     </nav>
   );

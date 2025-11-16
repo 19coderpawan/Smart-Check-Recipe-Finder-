@@ -4,7 +4,8 @@ import Generator from "./Pages/Generator.jsx";
 // import Saved from "./Pages/Saved.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-
+import Login from "./Pages/Login.jsx";
+import Signup from "./Pages/Signup.jsx";
 export default function App() {
   return (
      <Router>
@@ -15,6 +16,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             
             <Route path="/generate" element={<Generator />} />
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/Signup" element={<Signup/>}/>
            
           </Routes>
         </main>
