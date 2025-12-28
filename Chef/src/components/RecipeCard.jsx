@@ -1,23 +1,48 @@
 export default function RecipeCard({ recipe }) {
-  return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-      <h3 className="text-2xl font-bold mb-2 text-primary">{recipe.title}</h3>
-      <p className="text-gray-300 mb-4">{recipe.description}</p>
-      <p><strong>Time:</strong> {recipe.time} | <strong>Difficulty:</strong> {recipe.difficulty}</p>
+  if (!recipe) return null;
 
-      <h4 className="mt-4 font-semibold text-lg">Ingredients:</h4>
-      <ul className="list-disc list-inside text-gray-300">
-        {recipe.ingredients.map((i, index) => (
+  return (
+    <div className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      
+      {/* Title */}
+      <h3 className="text-3xl font-bold mb-4 text-primary">
+        {recipe.title}
+      </h3>
+
+      {/* Image */}
+      {recipe.image && (
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          className="w-full h-72 object-cover rounded-xl mb-4"
+        />
+      )}
+
+      {/* Category + Cuisine */}
+      <p className="text-gray-400 mb-4">
+        🍽 {recipe.category} | 🌍 {recipe.area}
+      </p>
+
+      {/* Ingredients */}
+      <h4 className="mt-4 font-semibold text-lg text-white">
+        🧂 Ingredients
+      </h4>
+      <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+        {recipe.ingredients?.map((i, index) => (
           <li key={index}>{i}</li>
         ))}
       </ul>
 
-      <h4 className="mt-4 font-semibold text-lg">Steps:</h4>
-      <ol className="list-decimal list-inside text-gray-300">
-        {recipe.steps.map((step, index) => (
+      {/* Instructions */}
+      <h4 className="mt-6 font-semibold text-lg text-white">
+        👨‍🍳 Cooking Steps
+      </h4>
+      <ol className="list-decimal list-inside text-gray-300 mt-2 space-y-2">
+        {recipe.instructions?.map((step, index) => (
           <li key={index}>{step}</li>
         ))}
       </ol>
+
     </div>
   );
 }

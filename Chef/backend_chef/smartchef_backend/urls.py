@@ -5,4 +5,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/users/", include("users.urls")),
     # future: path("api/recipes/", include("recipes.urls")),
+    path("api/ai/", include("ai.urls")),
 ]
