@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex gap-6 items-center text-gray-300 font-medium">
           <Link to="/" className="hover:text-primary transition">Home</Link>
           <Link to="/generate" className="hover:text-primary transition">Generate</Link>
-          <Link to="/saved" className="hover:text-primary transition">Saved</Link>
+          {/* <Link to="/saved" className="hover:text-primary transition">Saved</Link> */}
 
           {user ? (
             <>
